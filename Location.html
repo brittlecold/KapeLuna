@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locations</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="Pictures\Icons\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Pictures\Icons\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Pictures\Icons\favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="manifest" href="Pictures\Icons\site.webmanifest">
+    <link rel="stylesheet" href="locationstyle.css">
+    <link rel="stylesheet" href="Fonts/fontawesome.min.css">
+    <link rel="stylesheet" href="Fonts/all.min.css">
+    <script src="jQuerymin.js"></script>
+    <script src="jQueryloc.js"></script>
+  </head>
+
+  <body>
+    
+    <div id = "header"> 
+
+      <div class = "greenpanel">
+        <a href="Kape Luna.html"><img src="Pictures/Icons/Icon.png" class="icon"></a>
+        <li class="nav">
+          <a href="Home.html">Home</a>
+          <a href="History.html">Kape Luna</a>
+          <a href="Menu.html">Menu</a>
+          <a href="Gallery.html">Gallery</a>
+          <a href="Location.html"class="h">Locations</a>
+          <a href="Events.html">Events</a>
+        </li>
+      </div>
+      <div class = "brownpanel">Two</div>
+
+       <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+   
+      <div class="holder">
+
+        <div class="placeholder">
+
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989991.3313171312!2d120.96966031387745!3d14.244258375394148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a2ef6e0ec46d2b%3A0xcc939d3e6383e05!2sKape%20Luna!5e0!3m2!1sen!2sph!4v1713937784040!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="details">
+
+            <h5>
+
+              Kape Luna <br>(Poblacion)
+
+            </h5>
+            <h6>
+              Opening Hours
+            </h6>
+            <p> 10am-8pm </p>
+
+          </div>
+
+        </div>
+
+        <div class="placeholder">
+
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989991.3313171312!2d120.96966031387745!3d14.244258375394148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a2ef6e0ec46d2b%3A0xcc939d3e6383e05!2sKape%20Luna!5e0!3m2!1sen!2sph!4v1713937784040!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="details">
+
+            <h5>
+
+              Kape Luna <br>(Pasalubong Center)
+            
+            </h5>
+
+            <h6>
+              Opening Hours
+            </h6>
+            <p> 1pm-10pm </p>
+
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+    <div class="image">
+
+      <img src="Pictures/Accents/1.png" alt="">
+    </div>
+
+  </body>
+
+<!-- footer starts -->
+<footer class="footer">
+
+  <div class="socials">
+
+    <div class="inside-container">
+
+      <div class="row">
+        
+        <div class="Visit">
+
+          <p>Visit our social media sites! </a></p>
+          
+        </div>
+        
+        <div class="brands">   
+    
+          <a href="https://www.facebook.com/kapeluna.gl"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/kapeluna.gl/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.messenger.com/t/108135144742073"><i class="fa-brands fa-facebook-messenger"></i></a>
+          <a href="mailto:kapeluna01@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="email-updates">
+    <p>Stay updated with our latest news and offers:</p>
+    <form id="subscribe-form" action="subscribe.php" method="POST">
+    <input type="email" id="email-input" name="email" placeholder="Enter your email">
+    <button type="submit" id="subscribe-button">Subscribe</button>
+  </form>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("subscribe-form").addEventListener("submit", function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    
+    // Get the email input value
+    var email = document.getElementById("email-input").value;
+    
+    // Send the email value to subscribe.php using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "subscribe.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Display a pop-up message
+        alert(xhr.responseText);
+        
+        // Clear the email input field
+        document.getElementById("email-input").value = "";
+      }
+    };
+    xhr.send("email=" + email);
+  });
+</script>
+  
+</html>
